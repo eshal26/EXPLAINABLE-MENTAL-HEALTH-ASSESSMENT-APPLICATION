@@ -67,7 +67,7 @@ function buildApiBase(baseUrl) {
   return trimmed.endsWith("/api") ? trimmed : `${trimmed}/api`;
 }
 
-const API_BASE = buildApiBase("http://localhost:8000");
+const API_BASE = "/api";
 
 function authHeaders(auth) {
   return auth?.accessToken ? { Authorization: `Bearer ${auth.accessToken}` } : {};
