@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: eeg_xception_backend
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./backend:/app
+
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      SQLITE_DB_PATH: /app/analysis_history.db
+      EXPLAIN_MODEL_PATH: ${EXPLAIN_MODEL_PATH:-/app/xceptiontime_mdd_v2_statedict.pt}
+      EXPLAIN_CAV_BANK_DIR: ${EXPLAIN_CAV_BANK_DIR:-/app/cav_bank}
+      EXPLAIN_NPZ_PATH: ${EXPLAIN_NPZ_PATH:-/app/eeg_preprocessed.npz}
+      EXPLAIN_OUTPUT_DIR: ${EXPLAIN_OUTPUT_DIR:-/app/explanation_results}
+
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: eeg_xception_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

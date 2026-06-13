@@ -1,0 +1,26 @@
+{
+  "layers": [
+    "head.2.0"
+  ],
+  "concepts": [
+    "FAA",
+    "Theta",
+    "Alpha_Power",
+    "Beta_Power",
+    "TBR",
+    "Coherence"
+  ],
+  "n_cav_runs": 20,
+  "top_fraction": 0.3,
+  "model_path": "xceptiontime_mdd_v2_statedict.pt",
+  "npz_path": "eeg_preprocessed.npz",
+  "n_pool": 46660,
+  "cav_files": {
+    "FAA|head.2.0": "FAA_head_2_0.npz",
+    "Theta|head.2.0": "Theta_head_2_0.npz",
+    "Alpha_Power|head.2.0": "Alpha_Power_head_2_0.npz",
+    "Beta_Power|head.2.0": "Beta_Power_head_2_0.npz",
+    "TBR|head.2.0": "TBR_head_2_0.npz",
+    "Coherence|head.2.0": "Coherence_head_2_0.npz"
+  }
+}

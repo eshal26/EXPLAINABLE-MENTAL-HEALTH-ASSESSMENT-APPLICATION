@@ -1,0 +1,16 @@
+myenv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+analysis_history.db
+explanation_results/
+*.ipynb
+
+.env
+.git/
+.gitignore
+Dockerfile
