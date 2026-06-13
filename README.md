@@ -1,11 +1,10 @@
 ---
 title: MentalMetrics
 emoji: 🧠
-colorFrom: purple
+colorFrom: indigo
 colorTo: blue
 sdk: docker
-app_port: 3000
-pinned: false
+app_port: 7860
 ---
 # MentalMetrics
 
